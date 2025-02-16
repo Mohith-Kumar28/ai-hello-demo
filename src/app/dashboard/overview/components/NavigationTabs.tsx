@@ -1,5 +1,6 @@
 'use client';
 
+import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface TabItem {
@@ -41,6 +42,7 @@ export function NavigationTabs({
           </TabsTrigger>
         ))}
       </TabsList>
+      <Separator />
       {children}
     </Tabs>
   );
