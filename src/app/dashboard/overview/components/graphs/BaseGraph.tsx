@@ -64,7 +64,7 @@ export function BaseGraph({
         </div>
       </CardHeader>
       <CardContent className='p-4 pt-0'>
-        <div className='absolute bottom-0 left-0 right-0 h-[55px]'>
+        <div className='absolute bottom-0 left-0 right-0 h-[60px]'>
           <ChartContainer config={config}>
             <AreaChart
               data={data}
