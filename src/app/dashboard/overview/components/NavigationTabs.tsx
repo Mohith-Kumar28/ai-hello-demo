@@ -33,7 +33,7 @@ export function NavigationTabs({
               {tab.label}
               {tab.count !== undefined && (
                 <span
-                  className={`min-w-[1.5rem] rounded-full bg-destructive px-2 py-0.5 text-center text-xs text-destructive-foreground`}
+                  className={`min-w-[1.5rem] rounded-md bg-red-700 px-2 py-0.5 text-center text-xs text-destructive-foreground`}
                 >
                   {tab.count}
                 </span>
