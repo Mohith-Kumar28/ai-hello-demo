@@ -1,3 +1,4 @@
+import { log } from 'console';
 import {
   AlertTriangle,
   ArrowRight,
@@ -30,7 +31,14 @@ import {
   UserCircle2Icon,
   UserPen,
   UserX2Icon,
-  X
+  X,
+  BarChart3,
+  Clock,
+  Target,
+  Search,
+  MessageSquare,
+  ClipboardList,
+  LogOut
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -39,6 +47,7 @@ export const Icons = {
   dashboard: LayoutDashboardIcon,
   logo: Command,
   login: LogIn,
+  logout: LogOut,
   close: X,
   product: LucideShoppingBag,
   spinner: Loader2,
@@ -82,5 +91,11 @@ export const Icons = {
     </svg>
   ),
   twitter: Twitter,
-  check: Check
+  check: Check,
+  chart: BarChart3,
+  clock: Clock,
+  target: Target,
+  search: Search,
+  message: MessageSquare,
+  research: ClipboardList
 };

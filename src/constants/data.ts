@@ -19,44 +19,74 @@ export const navItems: NavItem[] = [
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
-    items: [] // Empty array as there are no child items for Dashboard
+    items: []
   },
   {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
+    title: 'Campaigns',
+    url: '/dashboard/campaigns',
+    icon: 'chart',
+    shortcut: ['c', 'c'],
     isActive: false,
-    items: [] // No child items
+    items: []
   },
   {
-    title: 'Account',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'billing',
-    isActive: true,
-
+    title: 'Day Parting',
+    url: '/dashboard/day-parting',
+    icon: 'clock',
+    shortcut: ['p', 't'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Targeting',
+    url: '/dashboard/targeting',
+    icon: 'target',
+    shortcut: ['t', 'g'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Search Terms',
+    url: '/dashboard/search-terms',
+    icon: 'search',
+    shortcut: ['s', 't'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Automated Messaging',
+    url: '/dashboard/messaging',
+    icon: 'message',
+    shortcut: ['a', 'm'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Research',
+    url: '/dashboard/research',
+    icon: 'research',
+    shortcut: ['r', 'r'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Settings',
+    url: '/dashboard/settings',
+    icon: 'settings',
+    shortcut: ['s', 's'],
+    isActive: false,
     items: [
       {
         title: 'Profile',
         url: '/dashboard/profile',
-        icon: 'userPen',
         shortcut: ['m', 'm']
       },
       {
         title: 'Login',
         shortcut: ['l', 'l'],
-        url: '/',
-        icon: 'login'
+        url: '/'
       }
     ]
-  },
-  {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: [] // No child items
   }
 ];
 

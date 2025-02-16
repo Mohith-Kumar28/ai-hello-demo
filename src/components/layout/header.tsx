@@ -18,10 +18,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import CalendarDateRangePicker from '../date-range-picker';
 import Image from 'next/image';
+import { SidebarTrigger } from '../ui/sidebar';
 
 export default function Header() {
   return (
-    <header className='flex h-16 shrink-0 items-center justify-end gap-4 border-b px-4'>
+    <header className='relative flex h-16 shrink-0 items-center justify-end gap-4 border-b px-4'>
+      <SidebarTrigger className='z-10 sm:absolute sm:-left-4 sm:top-4' />
       <Button
         variant='outline'
         className='border-red-600 text-red-600 hover:bg-red-50 hover:text-red-600'
