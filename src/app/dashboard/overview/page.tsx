@@ -3,26 +3,19 @@ import { NavigationTabs } from './components/NavigationTabs';
 import { TabsContent } from '@/components/ui/tabs';
 import { navigationTabs } from './data/mockData';
 import { Card } from '@/components/ui/card';
+import { GraphCards } from './components/GraphCards';
 
 export default function OverViewLayout() {
   return (
     <PageContainer>
-      <Card className='w-full p-4'>
-        <NavigationTabs tabs={navigationTabs} defaultValue='profile'>
-          <TabsContent value='profile'>
-            <div>table</div>
-          </TabsContent>
-          <TabsContent value='campaigns'>
-            <div>Campaigns Content</div>
-          </TabsContent>
-          <TabsContent value='adGroups'>
-            <div>Ad Groups Content</div>
-          </TabsContent>
-          <TabsContent value='targeting'>
-            <div>Targeting Content</div>
-          </TabsContent>
-        </NavigationTabs>
-      </Card>
+      <div className='flex w-full flex-col gap-4'>
+        <Card className='w-full p-4'>
+          <NavigationTabs tabs={navigationTabs} defaultValue='profile'>
+            <TabsContent value='profile'>hiiiiiii</TabsContent>
+          </NavigationTabs>
+        </Card>
+        <GraphCards />
+      </div>
     </PageContainer>
   );
 }
