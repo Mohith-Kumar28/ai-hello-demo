@@ -3,9 +3,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { MarketplaceData } from '../../data/profileData';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Button } from '@/components/ui/button';
 import {
-  ArrowUpDown,
   Pencil,
   ArrowUpCircle,
   ArrowDownCircle,
@@ -30,9 +28,9 @@ const TrendCell = ({ value, trend }: { value: string; trend: number }) => {
   return (
     <div className='flex items-center gap-2'>
       {trend >= 0 ? (
-        <ArrowUpCircle className='size-6 fill-green-500 text-white' />
+        <ArrowUpCircle className='size-5 fill-green-500 text-white' />
       ) : (
-        <ArrowDownCircle className='size-6 fill-red-500 text-white' />
+        <ArrowDownCircle className='size-5 fill-red-500 text-white' />
       )}
       <span className='text-gray-500'>{value}</span>
       <span className={cn('text-xs text-gray-500')}>{Math.abs(trend)}%</span>
