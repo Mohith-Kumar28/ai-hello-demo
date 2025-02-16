@@ -8,9 +8,23 @@ import {
   ArrowUpDown,
   Pencil,
   ArrowUpCircle,
-  ArrowDownCircle
+  ArrowDownCircle,
+  Filter,
+  ArrowDownWideNarrow
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+const TableHeader = ({ title }: { title: string }) => {
+  return (
+    <div className='flex items-center gap-2 text-xs font-semibold text-gray-500'>
+      <Filter className='size-4' />
+
+      {title}
+
+      <ArrowDownWideNarrow className='size-4' />
+    </div>
+  );
+};
 
 const TrendCell = ({ value, trend }: { value: string; trend: number }) => {
   return (
@@ -34,6 +48,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
         checked={table.getIsAllPageRowsSelected()}
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label='Select all'
+        className='border-secondary'
       />
     ),
     cell: ({ row }) => (
@@ -49,24 +64,14 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     accessorKey: 'marketplace',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Marketplace
-      </div>
-    ),
+    header: () => <TableHeader title='Marketplace' />,
     cell: ({ row }) => (
       <span className='text-primary'>{row.getValue('marketplace')}</span>
     )
   },
   {
     accessorKey: 'shortName',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Short Name
-      </div>
-    ),
+    header: () => <TableHeader title='Short Name' />,
     cell: ({ row }) => (
       <div className='flex items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
@@ -76,24 +81,14 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     accessorKey: 'autoPilot',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        AutoPilot
-      </div>
-    ),
+    header: () => <TableHeader title='AutoPilot' />,
     cell: ({ row }) => (
       <span className='text-gray-500'>{row.getValue('autoPilot')}</span>
     )
   },
   {
     accessorKey: 'dailyBudget',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Daily Budget
-      </div>
-    ),
+    header: () => <TableHeader title='Daily Budget' />,
     cell: ({ row }) => (
       <div className='flex items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
@@ -103,12 +98,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     id: 'spend',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Spend
-      </div>
-    ),
+    header: () => <TableHeader title='Spend' />,
     cell: ({ row }) => {
       const spend = row.original.spend;
       return <TrendCell value={spend.value} trend={spend.trend} />;
@@ -116,12 +106,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     id: 'sales',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Sales
-      </div>
-    ),
+    header: () => <TableHeader title='Sales' />,
     cell: ({ row }) => {
       const sales = row.original.sales;
       return <TrendCell value={sales.value} trend={sales.trend} />;
@@ -129,12 +114,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     id: 'acos',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        ACoS
-      </div>
-    ),
+    header: () => <TableHeader title='ACoS' />,
     cell: ({ row }) => {
       const acos = row.original.acos;
       return <TrendCell value={acos.value} trend={acos.trend} />;
@@ -142,12 +122,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   },
   {
     id: 'units',
-    header: ({ column }) => (
-      <div className='flex items-center gap-2'>
-        <ArrowUpDown className='h-3 w-3' />
-        Units
-      </div>
-    ),
+    header: () => <TableHeader title='Units' />,
     cell: ({ row }) => {
       const units = row.original.units;
       return <TrendCell value={units.value.toString()} trend={units.trend} />;
