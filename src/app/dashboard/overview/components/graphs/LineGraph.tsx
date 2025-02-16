@@ -67,12 +67,12 @@ export function LineGraph() {
         <ResponsiveContainer width='100%' height='100%'>
           <LineChart
             data={lineGraphData}
-            margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+            margin={{ top: 5, right: 30, bottom: 5, left: 30 }}
           >
             <CartesianGrid
-              strokeDasharray='3 3'
-              vertical={false}
-              stroke='#E5E7EB'
+              //   strokeDasharray='3 3'
+              vertical={true}
+              stroke='#CCCCCC'
             />
             <XAxis
               dataKey='day'
@@ -82,6 +82,16 @@ export function LineGraph() {
               dy={10}
             />
             <YAxis
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#6B7280', fontSize: 12 }}
+              tickFormatter={(value) => `$${value.toFixed(2)}`}
+              domain={[0, 80]}
+              ticks={[0, 20, 40, 60, 80]}
+            />
+            <YAxis
+              yAxisId='right'
+              orientation='right'
               axisLine={false}
               tickLine={false}
               tick={{ fill: '#6B7280', fontSize: 12 }}
@@ -100,19 +110,19 @@ export function LineGraph() {
             <Line
               type='linear'
               dataKey='sales'
-              stroke='#4266E9'
-              strokeWidth={2}
-              dot={{ r: 4, fill: '#4266E9', strokeWidth: 0 }}
-              activeDot={{ r: 6, fill: '#4266E9' }}
+              stroke='#5470DE'
+              strokeWidth={1.5}
+              dot={{ r: 4, fill: '#5470DE', strokeWidth: 0 }}
+              activeDot={{ r: 6, fill: '#5470DE' }}
               name='Sales'
             />
             <Line
               type='linear'
               dataKey='spend'
-              stroke='#06B6D4'
-              strokeWidth={2}
-              dot={{ r: 4, fill: '#06B6D4', strokeWidth: 0 }}
-              activeDot={{ r: 6, fill: '#06B6D4' }}
+              stroke='#58C4FF'
+              strokeWidth={1.5}
+              dot={{ r: 4, fill: '#58C4FF', strokeWidth: 0 }}
+              activeDot={{ r: 6, fill: '#58C4FF' }}
               name='Spend'
             />
             <Line
