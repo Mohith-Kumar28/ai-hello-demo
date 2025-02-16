@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuItem
 } from '@/components/ui/dropdown-menu';
-import { ChevronDown, LayoutGrid, UserCircle2 } from 'lucide-react';
+import { ChevronDown, LayoutGrid, User, UserCircle2 } from 'lucide-react';
 
 export function ProfileHeader() {
   return (
@@ -37,7 +37,7 @@ export function ProfileHeader() {
               variant='outline'
               className='flex items-center gap-2 border-dashed'
             >
-              <UserCircle2 className='h-4 w-4' />
+              <User className='h-4 w-4' />
               Active
               <ChevronDown className='h-4 w-4' />
             </Button>
