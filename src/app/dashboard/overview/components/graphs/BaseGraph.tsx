@@ -4,7 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import { Icons } from '@/components/icons';
 import { MoveDown, MoveUp, TrendingDown, TrendingUp } from 'lucide-react';
-import { Area, AreaChart } from 'recharts';
+import {
+  Area,
+  AreaChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis
+} from 'recharts';
 import { cn } from '@/lib/utils';
 
 interface BaseGraphProps {
@@ -12,10 +19,13 @@ interface BaseGraphProps {
   icon: keyof typeof Icons;
   color: string;
   amount: string;
-  data: any[];
+  data: Array<{ date: string; value: number }>;
   config: ChartConfig;
   trend: 'up' | 'down';
   trendValue: string;
+  height?: number;
+  showAxis?: boolean;
+  showTooltip?: boolean;
 }
 
 export function BaseGraph({
@@ -26,12 +36,18 @@ export function BaseGraph({
   data,
   config,
   trend,
-  trendValue
+  trendValue,
+  height = 100,
+  showAxis = false,
+  showTooltip = false
 }: BaseGraphProps) {
   const Icon = Icons[icon];
 
+  // Create a unique ID for each gradient using the color without '#'
+  const gradientId = `gradient-${color.replace('#', '')}`;
+
   return (
-    <Card className='relative h-[108px] overflow-hidden'>
+    <Card className='relative h-[120px] overflow-hidden'>
       <CardHeader className='flex-row items-center justify-between space-y-0 p-1 pb-2'>
         <div className='flex items-center gap-2'>
           <div
@@ -64,34 +80,32 @@ export function BaseGraph({
         </div>
       </CardHeader>
       <CardContent className='p-4 pt-0'>
-        <div className='absolute bottom-0 left-0 right-0 h-[60px]'>
-          <ChartContainer config={config}>
-            <AreaChart
-              data={data}
-              margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-            >
+        <div className='absolute bottom-0 left-0 right-0 h-[65px]'>
+          <ResponsiveContainer width='100%' height={height}>
+            <AreaChart data={data}>
+              {showAxis && (
+                <>
+                  <XAxis dataKey='date' />
+                  <YAxis />
+                </>
+              )}
+              {showTooltip && <Tooltip />}
               <defs>
-                <linearGradient
-                  id={`gradient-${title}`}
-                  x1='0'
-                  y1='0'
-                  x2='0'
-                  y2='1'
-                >
-                  <stop offset='10%' stopColor={color} stopOpacity={0.6} />
-                  <stop offset='40%' stopColor={color} stopOpacity={0.2} />
-                  <stop offset='100%' stopColor={color} stopOpacity={0} />
+                <linearGradient id={gradientId} x1='0' y1='0' x2='0' y2='1'>
+                  <stop offset='0%' stopColor={color} stopOpacity={0.7} />
+                  <stop offset='30%' stopColor={color} stopOpacity={0.2} />
+                  <stop offset='50%' stopColor={color} stopOpacity={0} />
                 </linearGradient>
               </defs>
               <Area
                 type='monotone'
                 dataKey='value'
                 stroke={color}
-                fill={`url(#gradient-${title})`}
+                fill={`url(#${gradientId})`}
                 strokeWidth={1.5}
               />
             </AreaChart>
-          </ChartContainer>
+          </ResponsiveContainer>
         </div>
       </CardContent>
     </Card>

@@ -19,8 +19,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'SPEND',
     icon: 'dollarSign',
-    color: '#F59E0B',
-    amount: '$1,087.54',
+    color: '#FFC246',
+    amount: '$1,234.56',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -39,7 +39,7 @@ export const graphCardsData: GraphCardData[] = [
     title: 'AD SALES',
     icon: 'store',
     color: '#4266E9',
-    amount: '$1,087.54',
+    amount: '$5,678.90',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -48,7 +48,7 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Sales'
+        label: 'Ad Sales'
       }
     },
     trend: 'up',
@@ -57,8 +57,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'IMPRESSIONS',
     icon: 'eye',
-    color: '#0FB5B5',
-    amount: '1,087.54',
+    color: '#07BEAA',
+    amount: '234.5K',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -76,8 +76,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'CLICKS',
     icon: 'mousePointer',
-    color: '#00B8E6',
-    amount: '1,433',
+    color: '#58C4FF',
+    amount: '12.3K',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -95,8 +95,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'CTR',
     icon: 'percent',
-    color: '#FF8533',
-    amount: '0.8%',
+    color: '#FFA14F',
+    amount: '5.23%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -114,8 +114,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'CVR',
     icon: 'pieChart',
-    color: '#CC00CC',
-    amount: '6.4%',
+    color: '#9669BE',
+    amount: '15.7%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -133,8 +133,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'CPC',
     icon: 'dollarSign',
-    color: '#4266E9',
-    amount: '$0.74',
+    color: '#005AFF',
+    amount: '$0.45',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -152,8 +152,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'ACos',
     icon: 'barChart',
-    color: '#FF1A1A',
-    amount: '70.23%',
+    color: '#8C564B',
+    amount: '25.4%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -171,8 +171,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'EPS',
     icon: 'circleDollarSign',
-    color: '#E83A95',
-    amount: '$1.54',
+    color: '#E377C2',
+    amount: '$2.34',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -190,8 +190,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'ORGANIC SALES',
     icon: 'boxIcon',
-    color: '#6B7280',
-    amount: '$1,087.54',
+    color: '#7F7F7F',
+    amount: '$3,456.78',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -209,8 +209,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'SESSIONS',
     icon: 'activity',
-    color: '#84CC16',
-    amount: '2,659',
+    color: '#BCBD21',
+    amount: '45.6K',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -228,8 +228,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'PAGE VIEWS',
     icon: 'eye',
-    color: '#06B6D4',
-    amount: '3,544',
+    color: '#17BECF',
+    amount: '89.1K',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -247,8 +247,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'BUYBOX %',
     icon: 'shoppingCart',
-    color: '#059669',
-    amount: '88.76%',
+    color: '#558564',
+    amount: '92.3%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -266,8 +266,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'UNIT SESSION %',
     icon: 'percent',
-    color: '#E11D48',
-    amount: '5.44%',
+    color: '#FFB6C2',
+    amount: '3.45%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -285,8 +285,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'TOTAL SALES',
     icon: 'circleDollarSign',
-    color: '#EAB308',
-    amount: '$1,087.54',
+    color: '#FFD700',
+    amount: '$12,345.67',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -304,8 +304,8 @@ export const graphCardsData: GraphCardData[] = [
   {
     title: 'TOTAL ACos',
     icon: 'trendingUp',
-    color: '#F97316',
-    amount: '39.17%',
+    color: '#D2691F',
+    amount: '18.9%',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
