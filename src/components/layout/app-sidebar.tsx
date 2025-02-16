@@ -20,13 +20,14 @@ import {
   SidebarMenuSubItem,
   SidebarRail
 } from '@/components/ui/sidebar';
-import { navItems } from '@/constants/data';
+import { NavItem } from '@/types/nav';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 import { Icons } from '../icons';
 import Image from 'next/image';
+import { navItems } from '@/constants/data';
 
 export default function AppSidebar() {
   const pathname = usePathname();
@@ -35,7 +36,7 @@ export default function AppSidebar() {
     <Sidebar collapsible='icon'>
       <SidebarHeader>
         <div className='flex gap-2 py-2 text-sidebar-accent-foreground'>
-          <Image src='/logo-full.png' alt='logo' width={150} height={50} />
+          <Image src='/logo-full.png' alt='logo' width={146} height={39} />
         </div>
       </SidebarHeader>
       <SidebarContent className='overflow-x-hidden'>
