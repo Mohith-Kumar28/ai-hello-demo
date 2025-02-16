@@ -31,7 +31,7 @@ export function BaseGraph({
   const Icon = Icons[icon];
 
   return (
-    <Card className='relative h-[120px] overflow-hidden'>
+    <Card className='relative h-[108px] overflow-hidden'>
       <CardHeader className='flex-row items-center justify-between space-y-0 p-1 pb-2'>
         <div className='flex items-center gap-2'>
           <div
@@ -43,7 +43,7 @@ export function BaseGraph({
           <div>
             <CardTitle className='text-sm font-semibold'>{title}</CardTitle>
 
-            <div className='flex justify-between gap-3 text-xs'>
+            <div className='flex justify-between gap-1 text-xs'>
               <span className=' '>{amount}</span>
 
               <span
@@ -64,7 +64,7 @@ export function BaseGraph({
         </div>
       </CardHeader>
       <CardContent className='p-4 pt-0'>
-        <div className='absolute bottom-0 left-0 right-0 h-[70px]'>
+        <div className='absolute bottom-0 left-0 right-0 h-[55px]'>
           <ChartContainer config={config}>
             <AreaChart
               data={data}
