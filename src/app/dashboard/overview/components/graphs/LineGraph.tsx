@@ -15,11 +15,38 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
-  Tooltip
+  Tooltip,
+  TooltipProps
 } from 'recharts';
 import { lineGraphData } from '../../data/lineGraphData';
 
 export function LineGraph() {
+  const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
+    if (!active || !payload) return null;
+
+    return (
+      <div className='rounded-lg bg-white p-3 shadow-lg'>
+        {payload.map((entry, index) => {
+          if (entry.dataKey === 'target') return null;
+          return (
+            <div key={index} className='flex items-center gap-2'>
+              <div
+                className='h-2 w-2 rounded-full'
+                style={{ backgroundColor: entry.stroke }}
+              />
+              <span className='text-sm font-medium capitalize'>
+                {entry.name}:
+              </span>
+              <span className='text-sm text-gray-600'>
+                ${entry?.value?.toFixed(2)}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <Card className='p-4'>
       <div className='mb-4 flex items-center gap-2'>
@@ -63,13 +90,12 @@ export function LineGraph() {
               ticks={[0, 20, 40, 60, 80]}
             />
             <Tooltip
-              contentStyle={{
-                backgroundColor: '#fff',
-                border: 'none',
-                borderRadius: '8px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              content={CustomTooltip}
+              cursor={{
+                stroke: '#E5E7EB',
+                strokeWidth: 1,
+                strokeDasharray: '3 3'
               }}
-              formatter={(value) => [`$${value}`, '']}
             />
             <Line
               type='linear'
@@ -78,6 +104,7 @@ export function LineGraph() {
               strokeWidth={2}
               dot={{ r: 4, fill: '#4266E9', strokeWidth: 0 }}
               activeDot={{ r: 6, fill: '#4266E9' }}
+              name='Sales'
             />
             <Line
               type='linear'
@@ -86,12 +113,14 @@ export function LineGraph() {
               strokeWidth={2}
               dot={{ r: 4, fill: '#06B6D4', strokeWidth: 0 }}
               activeDot={{ r: 6, fill: '#06B6D4' }}
+              name='Spend'
             />
             <Line
               type='linear'
               dataKey='target'
               stroke='transparent'
               dot={{ r: 4, fill: '#22C55E', strokeWidth: 0 }}
+              name='Target'
             />
           </LineChart>
         </ResponsiveContainer>
