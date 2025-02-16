@@ -3,25 +3,23 @@ import { Icons } from '@/components/icons';
 interface GraphCardData {
   title: string;
   icon: keyof typeof Icons;
-  iconBg: string;
+  color: string;
   amount: string;
   data: Array<{ date: string; value: number }>;
   config: {
     value: {
       label: string;
-      color: string;
     };
   };
   trend: 'up' | 'down';
   trendValue: string;
-  chartColor: string;
 }
 
 export const graphCardsData: GraphCardData[] = [
   {
     title: 'SPEND',
     icon: 'dollarSign',
-    iconBg: 'bg-amber-100',
+    color: '#F59E0B',
     amount: '$1,087.54',
     data: Array(20)
       .fill(0)
@@ -31,18 +29,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Spend',
-        color: 'hsl(45 93% 47%)'
+        label: 'Spend'
       }
     },
     trend: 'down',
-    trendValue: '-4.66%',
-    chartColor: 'hsl(45 93% 47%)'
+    trendValue: '-4.66%'
   },
   {
     title: 'AD SALES',
     icon: 'store',
-    iconBg: 'bg-blue-100',
+    color: '#4266E9',
     amount: '$1,087.54',
     data: Array(20)
       .fill(0)
@@ -52,18 +48,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Sales',
-        color: 'hsl(220 85% 57%)'
+        label: 'Sales'
       }
     },
     trend: 'up',
-    trendValue: '+0.45%',
-    chartColor: 'hsl(220 85% 57%)'
+    trendValue: '+0.45%'
   },
   {
     title: 'IMPRESSIONS',
     icon: 'eye',
-    iconBg: 'bg-teal-100',
+    color: '#0FB5B5',
     amount: '1,087.54',
     data: Array(20)
       .fill(0)
@@ -73,18 +67,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Impressions',
-        color: 'hsl(171 85% 45%)'
+        label: 'Impressions'
       }
     },
     trend: 'down',
-    trendValue: '-1.07%',
-    chartColor: 'hsl(171 85% 45%)'
+    trendValue: '-1.07%'
   },
   {
     title: 'CLICKS',
     icon: 'mousePointer',
-    iconBg: 'bg-sky-100',
+    color: '#00B8E6',
     amount: '1,433',
     data: Array(20)
       .fill(0)
@@ -94,18 +86,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Clicks',
-        color: 'hsl(190 85% 50%)'
+        label: 'Clicks'
       }
     },
     trend: 'up',
-    trendValue: '+0.66%',
-    chartColor: 'hsl(190 85% 50%)'
+    trendValue: '+0.66%'
   },
   {
     title: 'CTR',
     icon: 'percent',
-    iconBg: 'bg-orange-100',
+    color: '#FF8533',
     amount: '0.8%',
     data: Array(20)
       .fill(0)
@@ -115,18 +105,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'CTR',
-        color: 'hsl(25 85% 50%)'
+        label: 'CTR'
       }
     },
     trend: 'down',
-    trendValue: '-4.66%',
-    chartColor: 'hsl(25 85% 50%)'
+    trendValue: '-4.66%'
   },
   {
     title: 'CVR',
     icon: 'pieChart',
-    iconBg: 'bg-purple-100',
+    color: '#CC00CC',
     amount: '6.4%',
     data: Array(20)
       .fill(0)
@@ -136,18 +124,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'CVR',
-        color: 'hsl(280 85% 50%)'
+        label: 'CVR'
       }
     },
     trend: 'up',
-    trendValue: '+0.45%',
-    chartColor: 'hsl(280 85% 50%)'
+    trendValue: '+0.45%'
   },
   {
     title: 'CPC',
     icon: 'dollarSign',
-    iconBg: 'bg-blue-100',
+    color: '#4266E9',
     amount: '$0.74',
     data: Array(20)
       .fill(0)
@@ -157,18 +143,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'CPC',
-        color: 'hsl(220 85% 57%)'
+        label: 'CPC'
       }
     },
     trend: 'down',
-    trendValue: '-1.07%',
-    chartColor: 'hsl(220 85% 57%)'
+    trendValue: '-1.07%'
   },
   {
     title: 'ACos',
     icon: 'barChart',
-    iconBg: 'bg-rose-100',
+    color: '#FF1A1A',
     amount: '70.23%',
     data: Array(20)
       .fill(0)
@@ -178,19 +162,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'ACos',
-        color: 'hsl(350 85% 50%)'
+        label: 'ACos'
       }
     },
     trend: 'up',
-    trendValue: '+0.66%',
-    chartColor: 'hsl(350 85% 50%)'
+    trendValue: '+0.66%'
   },
-
   {
     title: 'EPS',
     icon: 'circleDollarSign',
-    iconBg: 'bg-[#FDE7F4]',
+    color: '#E83A95',
     amount: '$1.54',
     data: Array(20)
       .fill(0)
@@ -200,18 +181,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'EPS',
-        color: '#E83A95'
+        label: 'EPS'
       }
     },
     trend: 'down',
-    trendValue: '-4.66%',
-    chartColor: '#E83A95'
+    trendValue: '-4.66%'
   },
   {
     title: 'ORGANIC SALES',
     icon: 'boxIcon',
-    iconBg: 'bg-[#F3F4F6]',
+    color: '#6B7280',
     amount: '$1,087.54',
     data: Array(20)
       .fill(0)
@@ -221,18 +200,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Organic Sales',
-        color: '#6B7280'
+        label: 'Organic Sales'
       }
     },
     trend: 'up',
-    trendValue: '+0.45%',
-    chartColor: '#6B7280'
+    trendValue: '+0.45%'
   },
   {
     title: 'SESSIONS',
     icon: 'activity',
-    iconBg: 'bg-[#ECFCCB]',
+    color: '#84CC16',
     amount: '2,659',
     data: Array(20)
       .fill(0)
@@ -242,18 +219,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Sessions',
-        color: '#84CC16'
+        label: 'Sessions'
       }
     },
     trend: 'down',
-    trendValue: '-1.07%',
-    chartColor: '#84CC16'
+    trendValue: '-1.07%'
   },
   {
     title: 'PAGE VIEWS',
     icon: 'eye',
-    iconBg: 'bg-[#CFFAFE]',
+    color: '#06B6D4',
     amount: '3,544',
     data: Array(20)
       .fill(0)
@@ -263,18 +238,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Page Views',
-        color: '#06B6D4'
+        label: 'Page Views'
       }
     },
     trend: 'up',
-    trendValue: '+0.66%',
-    chartColor: '#06B6D4'
+    trendValue: '+0.66%'
   },
   {
     title: 'BUYBOX %',
     icon: 'shoppingCart',
-    iconBg: 'bg-[#D1FAE5]',
+    color: '#059669',
     amount: '88.76%',
     data: Array(20)
       .fill(0)
@@ -284,18 +257,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'BuyBox %',
-        color: '#059669'
+        label: 'BuyBox %'
       }
     },
     trend: 'down',
-    trendValue: '-4.66%',
-    chartColor: '#059669'
+    trendValue: '-4.66%'
   },
   {
     title: 'UNIT SESSION %',
     icon: 'percent',
-    iconBg: 'bg-[#FFE4E6]',
+    color: '#E11D48',
     amount: '5.44%',
     data: Array(20)
       .fill(0)
@@ -305,18 +276,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Unit Session %',
-        color: '#E11D48'
+        label: 'Unit Session %'
       }
     },
     trend: 'up',
-    trendValue: '+0.45%',
-    chartColor: '#E11D48'
+    trendValue: '+0.45%'
   },
   {
     title: 'TOTAL SALES',
     icon: 'circleDollarSign',
-    iconBg: 'bg-[#FEF9C3]',
+    color: '#EAB308',
     amount: '$1,087.54',
     data: Array(20)
       .fill(0)
@@ -326,18 +295,16 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Total Sales',
-        color: '#EAB308'
+        label: 'Total Sales'
       }
     },
     trend: 'down',
-    trendValue: '-1.07%',
-    chartColor: '#EAB308'
+    trendValue: '-1.07%'
   },
   {
     title: 'TOTAL ACos',
     icon: 'trendingUp',
-    iconBg: 'bg-[#FFEDD5]',
+    color: '#F97316',
     amount: '39.17%',
     data: Array(20)
       .fill(0)
@@ -347,12 +314,10 @@ export const graphCardsData: GraphCardData[] = [
       })),
     config: {
       value: {
-        label: 'Total ACos',
-        color: '#F97316'
+        label: 'Total ACos'
       }
     },
     trend: 'up',
-    trendValue: '+0.66%',
-    chartColor: '#F97316'
+    trendValue: '+0.66%'
   }
 ];

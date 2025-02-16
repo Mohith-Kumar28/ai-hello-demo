@@ -10,25 +10,23 @@ import { cn } from '@/lib/utils';
 interface BaseGraphProps {
   title: string;
   icon: keyof typeof Icons;
-  iconBg: string;
+  color: string;
   amount: string;
   data: any[];
   config: ChartConfig;
   trend: 'up' | 'down';
   trendValue: string;
-  chartColor: string;
 }
 
 export function BaseGraph({
   title,
   icon,
-  iconBg,
+  color,
   amount,
   data,
   config,
   trend,
-  trendValue,
-  chartColor
+  trendValue
 }: BaseGraphProps) {
   const Icon = Icons[icon];
 
@@ -36,8 +34,11 @@ export function BaseGraph({
     <Card className='relative h-[120px] overflow-hidden'>
       <CardHeader className='flex-row items-center justify-between space-y-0 p-1 pb-2'>
         <div className='flex items-center gap-2'>
-          <div className={cn('rounded-full p-1.5', iconBg)}>
-            <Icon className='size-2' />
+          <div
+            className='rounded-full p-1.5'
+            style={{ backgroundColor: `${color}15` }}
+          >
+            <Icon className='size-2' style={{ color: color }} />
           </div>
           <div>
             <CardTitle className='text-sm font-semibold'>{title}</CardTitle>
@@ -77,15 +78,15 @@ export function BaseGraph({
                   x2='0'
                   y2='1'
                 >
-                  <stop offset='10%' stopColor={chartColor} stopOpacity={0.6} />
-                  <stop offset='40%' stopColor={chartColor} stopOpacity={0.2} />
-                  <stop offset='100%' stopColor={chartColor} stopOpacity={0} />
+                  <stop offset='10%' stopColor={color} stopOpacity={0.6} />
+                  <stop offset='40%' stopColor={color} stopOpacity={0.2} />
+                  <stop offset='100%' stopColor={color} stopOpacity={0} />
                 </linearGradient>
               </defs>
               <Area
                 type='monotone'
                 dataKey='value'
-                stroke={chartColor}
+                stroke={color}
                 fill={`url(#gradient-${title})`}
                 strokeWidth={1.5}
               />
