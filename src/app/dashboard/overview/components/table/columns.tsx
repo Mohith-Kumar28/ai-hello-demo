@@ -42,20 +42,24 @@ export const columns: ColumnDef<MarketplaceData>[] = [
   {
     id: 'select',
     header: ({ table }) => (
-      <Checkbox
-        checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label='Select all'
-        className='border-secondary'
-      />
+      <div className='w-[40px] pr-4'>
+        <Checkbox
+          checked={table.getIsAllPageRowsSelected()}
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label='Select all'
+          className='border-secondary'
+        />
+      </div>
     ),
     cell: ({ row }) => (
-      <Checkbox
-        className='border-secondary'
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label='Select row'
-      />
+      <div className='w-[40px] pr-4'>
+        <Checkbox
+          className='border-secondary'
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label='Select row'
+        />
+      </div>
     ),
     enableSorting: false,
     enableHiding: false
@@ -64,14 +68,16 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'marketplace',
     header: () => <TableHeader title='Marketplace' />,
     cell: ({ row }) => (
-      <span className='text-primary'>{row.getValue('marketplace')}</span>
+      <div className='w-[100px]'>
+        <span className='text-primary'>{row.getValue('marketplace')}</span>
+      </div>
     )
   },
   {
     accessorKey: 'shortName',
     header: () => <TableHeader title='Short Name' />,
     cell: ({ row }) => (
-      <div className='flex items-center gap-2'>
+      <div className='flex w-[160px] items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
         <span className='text-gray-500'>{row.getValue('shortName')}</span>
       </div>
@@ -81,14 +87,16 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'autoPilot',
     header: () => <TableHeader title='AutoPilot' />,
     cell: ({ row }) => (
-      <span className='text-gray-500'>{row.getValue('autoPilot')}</span>
+      <div className='w-[80px]'>
+        <span className='text-gray-500'>{row.getValue('autoPilot')}</span>
+      </div>
     )
   },
   {
     accessorKey: 'dailyBudget',
     header: () => <TableHeader title='Daily Budget' />,
     cell: ({ row }) => (
-      <div className='flex items-center gap-2'>
+      <div className='flex w-[120px] items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
         <span className='text-gray-500'>{row.getValue('dailyBudget')}</span>
       </div>
@@ -99,7 +107,11 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     header: () => <TableHeader title='Spend' />,
     cell: ({ row }) => {
       const spend = row.original.spend;
-      return <TrendCell value={spend.value} trend={spend.trend} />;
+      return (
+        <div className='w-[140px]'>
+          <TrendCell value={spend.value} trend={spend.trend} />
+        </div>
+      );
     }
   },
   {
@@ -107,7 +119,11 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     header: () => <TableHeader title='Sales' />,
     cell: ({ row }) => {
       const sales = row.original.sales;
-      return <TrendCell value={sales.value} trend={sales.trend} />;
+      return (
+        <div className='w-[140px]'>
+          <TrendCell value={sales.value} trend={sales.trend} />
+        </div>
+      );
     }
   },
   {
@@ -115,7 +131,11 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     header: () => <TableHeader title='ACoS' />,
     cell: ({ row }) => {
       const acos = row.original.acos;
-      return <TrendCell value={acos.value} trend={acos.trend} />;
+      return (
+        <div className='w-[120px]'>
+          <TrendCell value={acos.value} trend={acos.trend} />
+        </div>
+      );
     }
   },
   {
@@ -123,7 +143,11 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     header: () => <TableHeader title='Units' />,
     cell: ({ row }) => {
       const units = row.original.units;
-      return <TrendCell value={units.value.toString()} trend={units.trend} />;
+      return (
+        <div className='w-[120px]'>
+          <TrendCell value={units.value.toString()} trend={units.trend} />
+        </div>
+      );
     }
   }
 ];
