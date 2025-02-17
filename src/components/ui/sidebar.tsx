@@ -21,7 +21,7 @@ import { ChevronLeft } from 'lucide-react';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
-const SIDEBAR_WIDTH = '16rem';
+const SIDEBAR_WIDTH = '14rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
 const SIDEBAR_WIDTH_ICON = '3rem';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
@@ -167,7 +167,7 @@ const Sidebar = React.forwardRef<
     {
       side = 'left',
       variant = 'sidebar',
-      collapsible = 'offcanvas',
+      collapsible = 'none',
       className,
       children,
       ...props
@@ -180,7 +180,9 @@ const Sidebar = React.forwardRef<
       return (
         <div
           className={cn(
-            'flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground',
+            'relative flex h-screen w-[280px] flex-col',
+            'before:absolute before:inset-0 before:bg-[url(/sidebar-bg.png)] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-100',
+            'isolate before:-z-10',
             className
           )}
           ref={ref}

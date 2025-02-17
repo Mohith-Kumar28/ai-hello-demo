@@ -1,96 +1,112 @@
 'use client';
 
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from '@/components/ui/collapsible';
-
-import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarRail
+  SidebarMenuButton
 } from '@/components/ui/sidebar';
-import { NavItem } from '@/types/nav';
-import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import * as React from 'react';
-import { Icons } from '../icons';
+import {
+  BarChart3,
+  Clock,
+  Target,
+  Search,
+  MessageSquare,
+  FileText,
+  Settings,
+  ChevronDown,
+  ChevronRight
+} from 'lucide-react';
 import Image from 'next/image';
-import { navItems } from '@/constants/data';
+import { cn } from '@/lib/utils';
+
+const menuItems = [
+  {
+    title: 'Dashboard',
+    icon: BarChart3,
+    href: '/dashboard'
+  },
+  {
+    title: 'Campaigns',
+    icon: BarChart3,
+    href: '/campaigns'
+  },
+  {
+    title: 'Day Parting',
+    icon: Clock,
+    href: '/day-parting'
+  },
+  {
+    title: 'Targeting',
+    icon: Target,
+    href: '/targeting'
+  },
+  {
+    title: 'Search Terms',
+    icon: Search,
+    href: '/search-terms'
+  },
+  {
+    title: 'Automated Messaging',
+    icon: MessageSquare,
+    href: '/messaging'
+  },
+  {
+    title: 'Research',
+    icon: FileText,
+    href: '/research'
+  },
+  {
+    title: 'Settings',
+    icon: Settings,
+    href: '/settings',
+    hasDropdown: true
+  }
+];
 
 export default function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar collapsible='icon'>
-      <SidebarHeader>
-        <div className='flex gap-2 py-2 text-sidebar-accent-foreground'>
-          <Image src='/logo-full.png' alt='logo' width={146} height={39} />
-        </div>
+    <Sidebar className=' '>
+      <SidebarHeader className='px-6 py-8'>
+        <Image src='/logo-full.png' alt='AI Hello' width={146} height={32} />
       </SidebarHeader>
-      <SidebarContent className='overflow-x-hidden'>
+
+      <SidebarContent className='px-4'>
         <SidebarGroup>
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className='mb-1 text-xs font-medium'>
+            MENU
+          </SidebarGroupLabel>
+
           <SidebarMenu>
-            {navItems.map((item) => {
-              const Icon = item.icon ? Icons[item.icon] : Icons.logo;
-              return item?.items && item?.items?.length > 0 ? (
-                <Collapsible
-                  key={item.title}
-                  asChild
-                  defaultOpen={item.isActive}
-                  className='group/collapsible'
-                >
-                  <SidebarMenuItem>
-                    <CollapsibleTrigger asChild>
-                      <SidebarMenuButton
-                        tooltip={item.title}
-                        isActive={pathname === item.url}
-                      >
-                        {item.icon && <Icon />}
-                        <span>{item.title}</span>
-                        <ChevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
-                      </SidebarMenuButton>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                      <SidebarMenuSub>
-                        {item.items?.map((subItem) => (
-                          <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton
-                              asChild
-                              isActive={pathname === subItem.url}
-                            >
-                              <Link href={subItem.url}>
-                                <span>{subItem.title}</span>
-                              </Link>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                        ))}
-                      </SidebarMenuSub>
-                    </CollapsibleContent>
-                  </SidebarMenuItem>
-                </Collapsible>
-              ) : (
-                <SidebarMenuItem key={item.title}>
+            {menuItems.map((item) => {
+              const isActive = pathname.startsWith(item.href);
+              const Icon = item.icon;
+
+              return (
+                <SidebarMenuItem key={item.href}>
                   <SidebarMenuButton
                     asChild
-                    tooltip={item.title}
-                    isActive={pathname === item.url}
+                    className={cn(
+                      'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                      isActive
+                        ? 'bg-white font-medium text-black'
+                        : 'text-gray-500 hover:bg-gray-100'
+                    )}
                   >
-                    <Link href={item.url}>
-                      <Icon />
+                    <Link href={item.href} className='flex items-center'>
+                      <Icon className='h-5 w-5' />
                       <span>{item.title}</span>
+                      {item.hasDropdown && (
+                        <ChevronRight className='ml-auto h-4 w-4' />
+                      )}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -99,7 +115,6 @@ export default function AppSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   );
 }
