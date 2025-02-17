@@ -18,7 +18,7 @@ export function ProfileHeader() {
           <DropdownMenuTrigger asChild>
             <Button
               variant='outline'
-              className='flex items-center gap-2 border'
+              className='flex h-[37px] items-center gap-2 border'
             >
               <LayoutGrid className='h-4 w-4' />
               17 Columns Selected
@@ -35,7 +35,7 @@ export function ProfileHeader() {
           <DropdownMenuTrigger asChild>
             <Button
               variant='outline'
-              className='flex items-center gap-2 border'
+              className='flex h-[37px] items-center gap-2 border'
             >
               <User className='h-4 w-4' />
               Active
@@ -50,7 +50,7 @@ export function ProfileHeader() {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className='flex items-center gap-2'>
+            <Button className='flex h-[37px] items-center gap-2'>
               Actions
               <ChevronDown className='h-4 w-4' />
             </Button>
