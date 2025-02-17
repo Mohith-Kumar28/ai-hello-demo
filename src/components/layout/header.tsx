@@ -28,7 +28,7 @@ export default function Header() {
       </Button>
 
       <Select defaultValue='us'>
-        <SelectTrigger className='w-[240px]'>
+        <SelectTrigger className='w-[244px]'>
           <div className='flex items-center gap-2'>
             <Image src='/us-flag.png' alt='f' width={24} height={24} />
             <SelectValue placeholder='Natural Things Main (US)' />

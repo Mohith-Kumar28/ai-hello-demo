@@ -3,7 +3,7 @@ import Providers from '@/components/layout/providers';
 import { Toaster } from '@/components/ui/sonner';
 import type { Metadata } from 'next';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
-import { Lato } from 'next/font/google';
+import { Lato, Inter } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import './globals.css';
 
@@ -18,6 +18,11 @@ const lato = Lato({
   display: 'swap'
 });
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+});
+
 export default async function RootLayout({
   children
 }: {
@@ -25,8 +30,12 @@ export default async function RootLayout({
 }) {
   const session = await auth();
   return (
-    <html lang='en' className={`${lato.className}`} suppressHydrationWarning>
-      <body className={'overflow-hidden'}>
+    <html
+      lang='en'
+      className={`${lato.className} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <body className={'overflow-hidden font-inter antialiased'}>
         <NextTopLoader showSpinner={false} />
         <NuqsAdapter>
           <Providers session={session}>
