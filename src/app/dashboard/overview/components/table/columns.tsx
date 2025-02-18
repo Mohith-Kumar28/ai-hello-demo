@@ -77,7 +77,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'shortName',
     header: () => <TableHeader title='Short Name' />,
     cell: ({ row }) => (
-      <div className='flex w-[160px] items-center gap-2'>
+      <div className='flex w-[165px] items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
         <span className='text-gray-500'>{row.getValue('shortName')}</span>
       </div>
@@ -87,7 +87,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'autoPilot',
     header: () => <TableHeader title='AutoPilot' />,
     cell: ({ row }) => (
-      <div className='w-[80px]'>
+      <div className='w-[75px]'>
         <span className='text-gray-500'>{row.getValue('autoPilot')}</span>
       </div>
     )
@@ -96,7 +96,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'dailyBudget',
     header: () => <TableHeader title='Daily Budget' />,
     cell: ({ row }) => (
-      <div className='flex w-[120px] items-center gap-2'>
+      <div className='flex w-[110px] items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
         <span className='text-gray-500'>{row.getValue('dailyBudget')}</span>
       </div>
@@ -108,7 +108,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     cell: ({ row }) => {
       const spend = row.original.spend;
       return (
-        <div className='w-[140px]'>
+        <div className='w-[145px]'>
           <TrendCell value={spend.value} trend={spend.trend} />
         </div>
       );
@@ -120,7 +120,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     cell: ({ row }) => {
       const sales = row.original.sales;
       return (
-        <div className='w-[140px]'>
+        <div className='w-[145px]'>
           <TrendCell value={sales.value} trend={sales.trend} />
         </div>
       );

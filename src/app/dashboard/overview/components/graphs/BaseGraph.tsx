@@ -37,7 +37,7 @@ export function BaseGraph({
   config,
   trend,
   trendValue,
-  height = 100,
+  height = 60,
   showAxis = false,
   showTooltip = false
 }: BaseGraphProps) {
@@ -47,24 +47,24 @@ export function BaseGraph({
   const gradientId = `gradient-${color.replace('#', '')}`;
 
   return (
-    <Card className='relative h-[120px] overflow-hidden'>
+    <Card className='relative h-[90px] overflow-hidden'>
       <CardHeader className='flex-row items-center justify-between space-y-0 p-1 pb-2'>
         <div className='flex items-center gap-2'>
           <div
-            className='rounded-full p-1.5'
-            style={{ backgroundColor: `${color}15` }}
+            className='rounded-full p-0.5'
+            style={{ backgroundColor: `${color}` }}
           >
-            <Icon className='size-2' style={{ color: color }} />
+            <Icon className='size-[12px]' style={{ color: 'white' }} />
           </div>
           <div>
-            <CardTitle className='text-sm font-semibold'>{title}</CardTitle>
+            <CardTitle className='text-[11px] font-semibold'>{title}</CardTitle>
 
-            <div className='flex justify-between gap-1 text-xs'>
+            <div className='flex justify-between gap-1 text-[10px]'>
               <span className=' '>{amount}</span>
 
               <span
                 className={cn(
-                  'flex items-center text-xs font-medium',
+                  'flex items-center font-medium',
                   trend === 'down' ? 'text-destructive' : 'text-green-500'
                 )}
               >
@@ -80,7 +80,7 @@ export function BaseGraph({
         </div>
       </CardHeader>
       <CardContent className='p-4 pt-0'>
-        <div className='absolute bottom-0 left-0 right-0 h-[65px]'>
+        <div className='absolute bottom-0 left-0 right-0 h-[50px]'>
           <ResponsiveContainer width='100%' height={height}>
             <AreaChart data={data}>
               {showAxis && (
