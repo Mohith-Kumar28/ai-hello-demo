@@ -55,7 +55,7 @@ export function DataTable() {
   return (
     <div className='space-y-4'>
       <div
-        className={`relative w-[calc(100dvw-${state === 'collapsed' ? '130px' : '300px'})] border-t`}
+        className={`relative ${state === 'collapsed' ? `w-[calc(100dvw-130px)]` : `w-[calc(100dvw-285px)]`} border-t`}
       >
         <Table className=' '>
           <TableHeader>
