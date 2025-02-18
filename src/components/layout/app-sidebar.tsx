@@ -113,13 +113,22 @@ export default function AppSidebar() {
           !isCollapsed && '-ml-3'
         )}
       >
-        <Image
-          src={isCollapsed ? '/logo-small.png' : '/logo-full.png'}
-          alt='AI Hello'
-          width={isCollapsed ? 60 : 146}
-          height={isCollapsed ? 60 : 40}
-          className='transition-all duration-200'
-        />
+        <div className='relative'>
+          <Image
+            src='/logo-full.png'
+            alt='AI Hello'
+            width={146}
+            height={40}
+            className={cn('', isCollapsed ? 'hidden' : 'block')}
+          />
+          <Image
+            src='/logo-small.png'
+            alt='AI Hello'
+            width={60}
+            height={60}
+            className={cn('', isCollapsed ? 'block' : 'hidden')}
+          />
+        </div>
       </SidebarHeader>
 
       <SidebarContent>
