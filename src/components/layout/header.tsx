@@ -14,6 +14,7 @@ import CalendarDateRangePicker from '../date-range-picker';
 import Image from 'next/image';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { UserMenu } from './user-menu';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 export default function Header() {
   return (
@@ -46,6 +47,10 @@ export default function Header() {
         <Bell className='h-5 w-5' />
         <span className='absolute right-1 top-1 flex h-2 w-2 rounded-full bg-red-600'></span>
       </Button>
+      <Avatar className='size-8'>
+        <AvatarImage src='/us-flag.png' />
+        <AvatarFallback>US</AvatarFallback>
+      </Avatar>
 
       <UserMenu />
     </header>
