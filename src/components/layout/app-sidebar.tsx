@@ -74,7 +74,7 @@ export default function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar className=' '>
+    <Sidebar collapsible='icon' className=' '>
       <SidebarHeader className='px-6 py-8'>
         <Image src='/logo-full.png' alt='AI Hello' width={146} height={32} />
       </SidebarHeader>

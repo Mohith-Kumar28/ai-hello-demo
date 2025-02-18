@@ -20,7 +20,7 @@ export function TablePagination() {
     <div className='flex items-center justify-between px-2'>
       <div className='flex items-center space-x-2'>
         <p className='text-sm font-medium'>Rows per page</p>
-        <Select defaultValue='10'>
+        <Select defaultValue='7'>
           <SelectTrigger className='h-8 w-[70px]'>
             <SelectValue />
           </SelectTrigger>

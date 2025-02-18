@@ -17,7 +17,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -167,7 +167,7 @@ const Sidebar = React.forwardRef<
     {
       side = 'left',
       variant = 'sidebar',
-      collapsible = 'none',
+      collapsible = 'icon',
       className,
       children,
       ...props
@@ -176,82 +176,21 @@ const Sidebar = React.forwardRef<
   ) => {
     const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
-    if (collapsible === 'none') {
-      return (
-        <div
-          className={cn(
-            'relative flex h-screen w-[280px] flex-col',
-            'before:absolute before:inset-0 before:bg-[url(/sidebar-bg.png)] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-100',
-            'isolate before:-z-10',
-            className
-          )}
-          ref={ref}
-          {...props}
-        >
-          {children}
-        </div>
-      );
-    }
-
-    if (isMobile) {
-      return (
-        <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
-          <SheetContent
-            data-sidebar='sidebar'
-            data-mobile='true'
-            className='w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden'
-            style={
-              {
-                '--sidebar-width': SIDEBAR_WIDTH_MOBILE
-              } as React.CSSProperties
-            }
-            side={side}
-          >
-            <div className='flex h-full w-full flex-col'>{children}</div>
-          </SheetContent>
-        </Sheet>
-      );
-    }
-
     return (
       <div
         ref={ref}
-        className='group peer hidden md:block'
+        className={cn(
+          'group peer hidden md:block',
+          'relative transition-all duration-300 ease-in-out',
+          'data-[state=collapsed]:w-[64px] data-[state=expanded]:w-[280px]',
+          'before:absolute before:inset-0 before:bg-[url(/sidebar-bg.png)] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-100',
+          'isolate before:-z-10',
+          className
+        )}
         data-state={state}
-        data-collapsible={state === 'collapsed' ? collapsible : ''}
-        data-variant={variant}
-        data-side={side}
+        {...props}
       >
-        <div
-          className={cn(
-            'relative h-svh w-[--sidebar-width] bg-transparent transition-[width] duration-200 ease-linear',
-            'group-data-[collapsible=offcanvas]:w-0',
-            'group-data-[side=right]:rotate-180',
-            variant === 'floating' || variant === 'inset'
-              ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4))]'
-              : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]'
-          )}
-        />
-        <div
-          className={cn(
-            'fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] transition-[left,right,width] duration-200 ease-linear md:flex',
-            side === 'left'
-              ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
-              : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
-            variant === 'floating' || variant === 'inset'
-              ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]'
-              : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon] group-data-[side=left]:border-r group-data-[side=right]:border-l',
-            className
-          )}
-          {...props}
-        >
-          <div
-            data-sidebar='sidebar'
-            className='flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow'
-          >
-            {children}
-          </div>
-        </div>
+        <div className='relative h-full'>{children}</div>
       </div>
     );
   }
@@ -262,7 +201,8 @@ const SidebarTrigger = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar();
+  const { state, toggleSidebar } = useSidebar();
+  const isCollapsed = state === 'collapsed';
 
   return (
     <div>
@@ -281,7 +221,11 @@ const SidebarTrigger = React.forwardRef<
         }}
         {...props}
       >
-        <ChevronLeft />
+        {isCollapsed ? (
+          <ChevronRight className='h-4 w-4' />
+        ) : (
+          <ChevronLeft className='h-4 w-4' />
+        )}
         <span className='sr-only'>Toggle Sidebar</span>
       </Button>
     </div>
