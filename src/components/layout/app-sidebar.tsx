@@ -118,7 +118,7 @@ export default function AppSidebar() {
             src='/logo-full.png'
             alt='AI Hello'
             width={146}
-            height={40}
+            height={60}
             className={cn('', isCollapsed ? 'hidden' : 'block')}
           />
           <Image
