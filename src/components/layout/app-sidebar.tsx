@@ -27,7 +27,11 @@ import {
   Settings,
   ChevronRight,
   HelpCircle,
-  LogOut
+  LogOut,
+  CircleGauge,
+  ChartNoAxesColumn,
+  MessageSquareShare,
+  BookText
 } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -53,12 +57,12 @@ import { useSidebar } from '@/components/ui/sidebar';
 const menuItems = [
   {
     title: 'Dashboard',
-    icon: BarChart3,
+    icon: CircleGauge,
     href: '/dashboard'
   },
   {
     title: 'Campaigns',
-    icon: BarChart3,
+    icon: ChartNoAxesColumn,
     href: '/campaigns'
   },
   {
@@ -78,12 +82,12 @@ const menuItems = [
   },
   {
     title: 'Automated Messaging',
-    icon: MessageSquare,
+    icon: MessageSquareShare,
     href: '/messaging'
   },
   {
     title: 'Research',
-    icon: FileText,
+    icon: BookText,
     href: '/research'
   },
   {

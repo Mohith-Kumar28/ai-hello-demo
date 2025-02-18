@@ -50,13 +50,14 @@ import {
   ShoppingCart,
   Activity,
   Box as BoxIcon,
-  TrendingUp
+  TrendingUp,
+  CircleGauge
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
 
 export const Icons = {
-  dashboard: LayoutDashboardIcon,
+  dashboard: CircleGauge,
   logo: Command,
   login: LogIn,
   logout: LogOut,

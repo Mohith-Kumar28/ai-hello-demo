@@ -18,7 +18,7 @@ import { UserMenu } from './user-menu';
 export default function Header() {
   return (
     <header className='relative flex h-16 shrink-0 items-center justify-end gap-4 border-b px-4'>
-      <SidebarTrigger className='z-40 sm:absolute sm:-left-3 sm:top-4' />
+      <SidebarTrigger className='z-40 sm:absolute sm:-left-3 sm:top-5' />
 
       <Button
         variant='outline'
