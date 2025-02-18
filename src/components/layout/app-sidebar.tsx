@@ -109,7 +109,13 @@ export default function AppSidebar() {
 
   return (
     <Sidebar collapsible='icon' className=' '>
-      <SidebarHeader className={cn('-mt-4 px-6 py-8', isCollapsed && 'px-0')}>
+      <SidebarHeader
+        className={cn(
+          '-mt-4 px-6 py-8',
+          isCollapsed && 'px-0',
+          !isCollapsed && '-ml-3'
+        )}
+      >
         <Image
           src={isCollapsed ? '/logo-small.png' : '/logo-full.png'}
           alt='AI Hello'
