@@ -48,23 +48,23 @@ export function BaseGraph({
 
   return (
     <Card className='relative h-[90px] overflow-hidden'>
-      <CardHeader className='flex-row items-center justify-between space-y-0 p-1 pb-2'>
-        <div className='flex items-center gap-2'>
+      <CardHeader className='flex justify-between p-1 pb-2'>
+        <div className='flex items-start gap-2'>
           <div
-            className='rounded-full p-0.5'
+            className='m-=1 rounded-full p-0.5'
             style={{ backgroundColor: `${color}` }}
           >
             <Icon className='size-[13px]' style={{ color: 'white' }} />
           </div>
-          <div>
+          <div className='w-full'>
             <CardTitle className='text-[11px] font-semibold'>{title}</CardTitle>
 
-            <div className='flex justify-between gap-1 text-[10px]'>
-              <span className=' '>{amount}</span>
+            <div className='flex w-full justify-between text-[10px]'>
+              <div className=' '>{amount}</div>
 
-              <span
+              <div
                 className={cn(
-                  'flex items-center font-medium',
+                  'flex items-end font-medium',
                   trend === 'down' ? 'text-destructive' : 'text-green-500'
                 )}
               >
@@ -74,7 +74,7 @@ export function BaseGraph({
                 ) : (
                   <MoveDown className='h-3 w-3 text-destructive' />
                 )}
-              </span>
+              </div>
             </div>
           </div>
         </div>

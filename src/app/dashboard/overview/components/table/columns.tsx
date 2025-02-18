@@ -132,7 +132,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     cell: ({ row }) => {
       const acos = row.original.acos;
       return (
-        <div className='w-[120px]'>
+        <div className='w-[145px]'>
           <TrendCell value={acos.value} trend={acos.trend} />
         </div>
       );

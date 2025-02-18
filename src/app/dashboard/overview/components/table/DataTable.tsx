@@ -23,6 +23,7 @@ import { columns } from './columns';
 import { marketplaceData } from '../../data/profileData';
 import { useState } from 'react';
 import { ScrollArea } from '@radix-ui/react-scroll-area';
+import { useSidebar } from '@/components/ui/sidebar';
 
 export function DataTable() {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -49,10 +50,14 @@ export function DataTable() {
     }
   });
 
+  const { state } = useSidebar();
+
   return (
     <div className='space-y-4'>
-      <ScrollArea className='relative w-[calc(100dvw-320px)] border-t'>
-        <Table>
+      <div
+        className={`relative w-[calc(100dvw-${state === 'collapsed' ? '130px' : '270px'})] border-t`}
+      >
+        <Table className=' '>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -104,7 +109,7 @@ export function DataTable() {
             )}
           </TableBody>
         </Table>
-      </ScrollArea>
+      </div>
     </div>
   );
 }
