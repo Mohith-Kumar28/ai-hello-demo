@@ -8,6 +8,7 @@ import { Button } from './ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Calendar } from './ui/calendar';
 import { cn } from '@/lib/utils';
+import { Separator } from './ui/separator';
 
 export default function CalendarDateRangePicker({
   className
@@ -41,7 +42,8 @@ export default function CalendarDateRangePicker({
             ) : (
               <span>Pick a date</span>
             )}
-            <CalendarIcon className='mr-2 h-4 w-4' />
+            <Separator orientation='vertical' className='mx-2' />
+            <CalendarIcon className='h-4 w-4' />
           </Button>
         </PopoverTrigger>
         <PopoverContent className='w-auto p-0' align='start'>
