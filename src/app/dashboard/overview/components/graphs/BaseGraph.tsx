@@ -54,7 +54,7 @@ export function BaseGraph({
             className='rounded-full p-0.5'
             style={{ backgroundColor: `${color}` }}
           >
-            <Icon className='size-[12px]' style={{ color: 'white' }} />
+            <Icon className='size-[13px]' style={{ color: 'white' }} />
           </div>
           <div>
             <CardTitle className='text-[11px] font-semibold'>{title}</CardTitle>

@@ -142,7 +142,7 @@ export default function AppSidebar() {
                         <CollapsibleTrigger asChild>
                           <SidebarMenuButton
                             className={cn(
-                              'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                              'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
                               isActive
                                 ? 'bg-white font-medium text-black'
                                 : 'text-gray-500 hover:bg-gray-100'
@@ -179,7 +179,7 @@ export default function AppSidebar() {
                         <SidebarMenuButton
                           tooltip={item.title}
                           className={cn(
-                            'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                            'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
                             isActive
                               ? 'bg-white font-medium text-black'
                               : 'text-gray-500 hover:bg-gray-100'
@@ -218,7 +218,7 @@ export default function AppSidebar() {
                     asChild
                     tooltip={item.title}
                     className={cn(
-                      'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                      'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
                       isActive
                         ? 'bg-white font-medium text-black'
                         : 'text-gray-500 hover:bg-gray-100'
@@ -243,7 +243,7 @@ export default function AppSidebar() {
               asChild
               tooltip='Help'
               className={cn(
-                'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
                 'text-gray-500 hover:bg-gray-100'
               )}
             >
@@ -261,7 +261,7 @@ export default function AppSidebar() {
               asChild
               tooltip='Logout'
               className={cn(
-                'gap-3 rounded-md px-3 py-5 text-[15px] transition-colors',
+                'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
                 'text-gray-500 hover:bg-gray-100'
               )}
             >
