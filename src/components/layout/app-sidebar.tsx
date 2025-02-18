@@ -48,6 +48,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { signOut } from 'next-auth/react';
+import { useSidebar } from '@/components/ui/sidebar';
 
 const menuItems = [
   {
@@ -99,11 +100,19 @@ const menuItems = [
 
 export default function AppSidebar() {
   const pathname = usePathname();
+  const { state } = useSidebar();
+  const isCollapsed = state === 'collapsed';
 
   return (
     <Sidebar collapsible='icon' className=' '>
-      <SidebarHeader className='px-6 py-8'>
-        <Image src='/logo-full.png' alt='AI Hello' width={146} height={32} />
+      <SidebarHeader className={cn('-mt-4 px-6 py-8', isCollapsed && 'px-0')}>
+        <Image
+          src={isCollapsed ? '/logo-small.png' : '/logo-full.png'}
+          alt='AI Hello'
+          width={isCollapsed ? 60 : 146}
+          height={isCollapsed ? 60 : 40}
+          className=''
+        />
       </SidebarHeader>
 
       <SidebarContent>
