@@ -111,7 +111,7 @@ export default function AppSidebar() {
           alt='AI Hello'
           width={isCollapsed ? 60 : 146}
           height={isCollapsed ? 60 : 40}
-          className=''
+          className='transition-all duration-200'
         />
       </SidebarHeader>
 
