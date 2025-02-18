@@ -53,6 +53,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { signOut } from 'next-auth/react';
 import { useSidebar } from '@/components/ui/sidebar';
+import { Separator } from '../ui/separator';
 
 const menuItems = [
   {
@@ -127,9 +128,7 @@ export default function AppSidebar() {
 
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className='mb-1 text-xs font-medium'>
-            MENU
-          </SidebarGroupLabel>
+          <span className='mb-4 text-[12px]'>MENU</span>
 
           <SidebarMenu>
             {menuItems.map((item) => {
@@ -180,6 +179,9 @@ export default function AppSidebar() {
                   </div>
 
                   <div className='group-data-[state=collapsed]:block group-data-[state=expanded]:hidden'>
+                    <Separator className='my-2' />
+
+                    <span className='-mx-0.5 text-[10px]'>{item.title}</span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <SidebarMenuButton
