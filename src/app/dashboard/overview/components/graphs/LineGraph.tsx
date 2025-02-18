@@ -65,10 +65,7 @@ export function LineGraph() {
 
       <div className='h-[300px] w-full'>
         <ResponsiveContainer width='100%' height='100%'>
-          <LineChart
-            data={lineGraphData}
-            margin={{ top: 5, right: 30, bottom: 5, left: 30 }}
-          >
+          <LineChart className='' data={lineGraphData}>
             <CartesianGrid
               //   strokeDasharray='3 3'
               vertical={true}
