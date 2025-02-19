@@ -168,6 +168,7 @@ export default function AppSidebar() {
                             {item.items.map((subItem) => (
                               <SidebarMenuSubItem key={subItem.title}>
                                 <SidebarMenuSubButton
+                                  className='text-[13px]'
                                   asChild
                                   isActive={pathname === subItem.href}
                                 >
