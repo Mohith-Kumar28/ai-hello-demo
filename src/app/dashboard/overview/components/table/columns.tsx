@@ -14,8 +14,8 @@ import { cn } from '@/lib/utils';
 
 const TableHeader = ({ title }: { title: string }) => {
   return (
-    <div className='flex items-center gap-2 text-xs font-semibold text-gray-500'>
-      <Filter className='size-4' />
+    <div className='flex items-center gap-2 text-xs font-bold text-gray-500'>
+      <Filter className='size-3' />
 
       {title}
 
@@ -96,7 +96,7 @@ export const columns: ColumnDef<MarketplaceData>[] = [
     accessorKey: 'dailyBudget',
     header: () => <TableHeader title='Daily Budget' />,
     cell: ({ row }) => (
-      <div className='flex w-[110px] items-center gap-2'>
+      <div className='flex w-[120px] items-center gap-2'>
         <Pencil className='h-3 w-3 text-primary' />
         <span className='text-gray-500'>{row.getValue('dailyBudget')}</span>
       </div>
