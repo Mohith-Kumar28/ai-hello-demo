@@ -13,6 +13,7 @@ interface GraphCardData {
   };
   trend: 'up' | 'down';
   trendValue: string;
+  isHighlighted?: boolean;
 }
 
 export const graphCardsData: GraphCardData[] = [
@@ -39,7 +40,7 @@ export const graphCardsData: GraphCardData[] = [
     title: 'AD SALES',
     icon: 'store',
     color: '#4266E9',
-    amount: '$5,678.90',
+    amount: '$1,087.54',
     data: Array(20)
       .fill(0)
       .map((_, i) => ({
@@ -52,7 +53,8 @@ export const graphCardsData: GraphCardData[] = [
       }
     },
     trend: 'up',
-    trendValue: '+0.45%'
+    trendValue: '+0.45%',
+    isHighlighted: true
   },
   {
     title: 'IMPRESSIONS',
@@ -90,7 +92,8 @@ export const graphCardsData: GraphCardData[] = [
       }
     },
     trend: 'up',
-    trendValue: '+0.66%'
+    trendValue: '+0.66%',
+    isHighlighted: true
   },
   {
     title: 'CTR',
