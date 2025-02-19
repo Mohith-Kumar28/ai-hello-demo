@@ -28,7 +28,7 @@ export function UserMenu() {
             </div>
             <Avatar className='size-9'>
               <AvatarImage
-                src={session?.user?.image || '/path-to-default-image.jpg'}
+                src={session?.user?.image || '/person.png'}
                 alt={session?.user?.name || 'User'}
               />
               <AvatarFallback>QR</AvatarFallback>
