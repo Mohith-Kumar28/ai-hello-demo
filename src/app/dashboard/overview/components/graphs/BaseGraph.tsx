@@ -51,7 +51,7 @@ export function BaseGraph({
       <CardHeader className='flex justify-between p-1 pb-2'>
         <div className='flex items-start gap-2'>
           <div
-            className='m-=1 rounded-full p-0.5'
+            className='m-1 rounded-full p-0.5'
             style={{ backgroundColor: `${color}` }}
           >
             <Icon className='size-[13px]' style={{ color: 'white' }} />
