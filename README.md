@@ -1,6 +1,6 @@
 # AI Hello Demo
 
-A modern dashboard application built with Next.js, featuring authentication, search functionality, and a responsive design.
+A modern dashboard overview application built with Next.js, showcasing interactive data visualization and analytics components.
 
 ## Live Demo
 
@@ -8,21 +8,19 @@ A modern dashboard application built with Next.js, featuring authentication, sea
 
 ## Features
 
-- 🔐 Authentication system
-- 🎨 Modern and responsive UI
-- 🔍 Search functionality with KBar integration
-- 📱 Mobile-friendly design
-- 🌙 Dark/Light mode support
-- 🗺️ Breadcrumb navigation
-- 📊 Dashboard overview
+- 📊 Interactive Dashboard Overview with static data visualization
+- 📈 Data visualization components featuring area and line charts
+- 💹 Sales analytics and performance metrics
+- 🎨 Modern UI built with Shadcn components
 
 ## Tech Stack
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- NextAuth.js
-- Shadcn UI Components
+- Next.js 13+ with App Router for efficient routing
+- TypeScript for enhanced type safety
+- Tailwind CSS for responsive styling
+- Shadcn UI Components for dashboard elements
+- Data visualization libraries for interactive charts
+- Server Components for optimal performance
 
 ## Getting Started
 
@@ -59,13 +57,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```
 src/
-├── app/              # Next.js app directory
+├── app/              # Next.js app directory with app router setup
+│   ├── (auth)/       # Authentication related pages
+│   ├── api/          # API routes
+│   └── dashboard/    # Dashboard pages and layouts
 ├── components/       # Reusable UI components
-├── features/         # Feature-specific components
-├── hooks/            # Custom React hooks
-├── lib/              # Utility functions and configurations
-└── types/            # TypeScript type definitions
+│   ├── ui/          # Shadcn UI components
+│   ├── kbar/        # KBar search components
+│   ├── layout/      # Layout components
+│   └── providers/   # React context providers
+├── constants/       # Constants and mock data
+├── features/        # Feature-specific components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions and configurations
+└── types/           # TypeScript type definitions
 ```
+
+## Development Tools
+
+- ESLint for code linting
+- Prettier for code formatting
+- Husky for Git hooks
+- Lint-staged for running linters on staged files
 
 ## Deployment
 
