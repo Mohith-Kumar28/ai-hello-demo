@@ -76,7 +76,7 @@ export function BaseGraph({
 
               <div
                 className={cn(
-                  'flex items-end font-medium',
+                  'flex items-center font-medium',
                   isHighlighted
                     ? 'text-white'
                     : trend === 'down'
@@ -86,9 +86,9 @@ export function BaseGraph({
               >
                 {trendValue}
                 {trend === 'up' ? (
-                  <MoveUp className='h-3 w-3' />
+                  <MoveUp className='size-2' />
                 ) : (
-                  <MoveDown className='h-3 w-3' />
+                  <MoveDown className='size-2' />
                 )}
               </div>
             </div>
