@@ -1,6 +1,6 @@
 # AI Hello Demo
 
-A modern dashboard overview application built with Next.js, showcasing interactive data visualization and analytics components.
+A modern dashboard overview application built with Next.js and Bun runtime, showcasing interactive data visualization and analytics components.
 
 ## Live Demo
 
@@ -12,9 +12,14 @@ A modern dashboard overview application built with Next.js, showcasing interacti
 - 📈 Data visualization components featuring area and line charts
 - 💹 Sales analytics and performance metrics
 - 🎨 Modern UI built with Shadcn components
+- ⚡ Lightning-fast development with Bun runtime
 
 ## Tech Stack
 
+- Bun as the JavaScript runtime for:
+  - Ultra-fast package installation and dependency management
+  - Native TypeScript/JSX compilation without additional tooling
+  - Improved development and build performance
 - Next.js 13+ with App Router for efficient routing
 - TypeScript for robust type safety and developer experience
   - Strong type checking across components and data flows
@@ -30,8 +35,8 @@ A modern dashboard overview application built with Next.js, showcasing interacti
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or bun package manager
+- Bun runtime (recommended for faster development)
+- Node.js (v16 or higher) as alternative
 
 ### Installation
 
@@ -43,14 +48,14 @@ cd ai-hello-demo
 
 2. Install dependencies
 ```bash
-bun install
+bun install  # Ultra-fast installation with Bun
 # or
 npm install
 ```
 
 3. Run the development server
 ```bash
-bun dev
+bun dev      # Faster development server with Bun
 # or
 npm run dev
 ```

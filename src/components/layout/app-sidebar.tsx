@@ -168,12 +168,14 @@ export default function AppSidebar() {
                             {item.items.map((subItem) => (
                               <SidebarMenuSubItem key={subItem.title}>
                                 <SidebarMenuSubButton
+                                  className='text-[13px] transition-colors'
                                   asChild
                                   isActive={pathname === subItem.href}
                                 >
                                   <Link href={subItem.href}>
                                     <span>{subItem.title}</span>
                                   </Link>
+                                  ``
                                 </SidebarMenuSubButton>
                               </SidebarMenuSubItem>
                             ))}
