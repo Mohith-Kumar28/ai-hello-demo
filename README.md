@@ -16,7 +16,11 @@ A modern dashboard overview application built with Next.js, showcasing interacti
 ## Tech Stack
 
 - Next.js 13+ with App Router for efficient routing
-- TypeScript for enhanced type safety
+- TypeScript for robust type safety and developer experience
+  - Strong type checking across components and data flows
+  - Interface definitions for data visualization components
+  - Type-safe props and state management
+  - Custom type definitions for API responses and data models
 - Tailwind CSS for responsive styling
 - Shadcn UI Components for dashboard elements
 - Data visualization libraries for interactive charts
