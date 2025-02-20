@@ -54,42 +54,42 @@ import { Separator } from '../ui/separator';
 const menuItems = [
   {
     title: 'Dashboard',
-    icon: CircleGauge,
+    icon: '/menu-icons/Dashboard.svg',
     href: '/dashboard'
   },
   {
     title: 'Campaigns',
-    icon: ChartNoAxesColumn,
+    icon: '/menu-icons/chart-simple.svg',
     href: '/campaigns'
   },
   {
     title: 'Day Parting',
-    icon: Clock,
+    icon: '/menu-icons/clock.svg',
     href: '/day-parting'
   },
   {
     title: 'Targeting',
-    icon: Target,
+    icon: '/menu-icons/bullseye-pointer.svg',
     href: '/targeting'
   },
   {
     title: 'Search Terms',
-    icon: Search,
+    icon: '/menu-icons/search.svg',
     href: '/search-terms'
   },
   {
     title: 'Automated Messaging',
-    icon: MessageSquareShare,
+    icon: '/menu-icons/message-arrow-up-right.svg',
     href: '/messaging'
   },
   {
     title: 'Research',
-    icon: BookText,
+    icon: '/menu-icons/book.svg',
     href: '/research'
   },
   {
     title: 'Settings',
-    icon: Settings,
+    icon: '/menu-icons/gear.svg',
     href: '/settings',
     items: [
       { title: 'Profile', href: '/settings/profile' },
@@ -138,7 +138,6 @@ export default function AppSidebar() {
           <SidebarMenu>
             {menuItems.map((item) => {
               const isActive = pathname.startsWith(item.href);
-              const Icon = item.icon;
 
               return item.items ? (
                 <SidebarMenuItem key={item.title}>
@@ -158,7 +157,13 @@ export default function AppSidebar() {
                                 : 'text-gray-500 hover:bg-gray-100'
                             )}
                           >
-                            <Icon className='h-5 w-5' />
+                            <Image
+                              src={item.icon}
+                              alt={item.title}
+                              width={15}
+                              height={15}
+                              className='text-current'
+                            />
                             <span>{item.title}</span>
                             <ChevronRight className='ml-auto h-4 w-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
                           </SidebarMenuButton>
@@ -199,7 +204,13 @@ export default function AppSidebar() {
                               : 'text-gray-500 hover:bg-gray-100'
                           )}
                         >
-                          <Icon className='h-5 w-5' />
+                          <Image
+                            src={item.icon}
+                            alt={item.title}
+                            width={15}
+                            height={15}
+                            className='text-current'
+                          />
                         </SidebarMenuButton>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent
@@ -239,7 +250,13 @@ export default function AppSidebar() {
                     )}
                   >
                     <Link href={item.href} className='flex items-center'>
-                      <Icon className='h-5 w-5' />
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        width={15}
+                        height={15}
+                        className='text-current'
+                      />
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
