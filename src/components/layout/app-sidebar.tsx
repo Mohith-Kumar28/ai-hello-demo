@@ -267,7 +267,7 @@ export default function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className='mt-auto'>
+      {/* <SidebarFooter className='mt-auto'>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton
@@ -308,7 +308,7 @@ export default function AppSidebar() {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarFooter>
+      </SidebarFooter> */}
       <SidebarRail />
     </Sidebar>
   );
