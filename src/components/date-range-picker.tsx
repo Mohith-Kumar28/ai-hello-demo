@@ -26,7 +26,7 @@ export default function CalendarDateRangePicker({
             id='date'
             variant={'outline'}
             className={cn(
-              'h-[36px] justify-start border-none bg-secondary text-left font-normal',
+              'h-[36px] justify-start border-none bg-secondary text-left text-[13px] font-normal text-gray-600',
               !date && 'text-muted-foreground'
             )}
           >
@@ -42,7 +42,7 @@ export default function CalendarDateRangePicker({
             ) : (
               <span>Pick a date</span>
             )}
-            <Separator orientation='vertical' className='mx-2' />
+            <Separator orientation='vertical' className='mx-1 bg-gray-600' />
             <CalendarIcon className='h-4 w-4' />
           </Button>
         </PopoverTrigger>

@@ -108,26 +108,41 @@ export default function AppSidebar() {
     <Sidebar collapsible='icon' className=' '>
       <SidebarHeader
         className={cn(
-          '-mt-4 px-6 py-8',
+          'transition-sidebar-content -mt-4 px-6 py-8',
           isCollapsed && 'px-0',
           !isCollapsed && '-ml-3'
         )}
       >
-        <div className='relative'>
-          <Image
-            src='/logo-full.png'
-            alt='AI Hello'
-            width={146}
-            height={60}
-            className={cn('', isCollapsed ? 'hidden' : 'block')}
-          />
-          <Image
-            src='/logo-small.png'
-            alt='AI Hello'
-            width={60}
-            height={60}
-            className={cn('', isCollapsed ? 'block' : 'hidden')}
-          />
+        <div className='transition-sidebar-content relative h-[60px] w-[146px]'>
+          <div
+            className={cn(
+              'absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out',
+              isCollapsed ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+            )}
+          >
+            <Image
+              src='/logo-full.png'
+              alt='AI Hello'
+              width={146}
+              height={60}
+              className='h-full w-full object-contain'
+            />
+          </div>
+
+          <div
+            className={cn(
+              'absolute left-1/2 top-1/2 h-[60px] w-[60px] -translate-x-20 -translate-y-1/2 transition-all duration-300 ease-in-out',
+              isCollapsed ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+            )}
+          >
+            <Image
+              src='/logo-small.png'
+              alt='AI Hello'
+              width={60}
+              height={60}
+              className='h-full w-full object-contain'
+            />
+          </div>
         </div>
       </SidebarHeader>
 
@@ -243,7 +258,7 @@ export default function AppSidebar() {
                     asChild
                     tooltip={item.title}
                     className={cn(
-                      'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
+                      'gap-3 rounded-md px-3 py-5 text-[13px] transition-all duration-300 ease-in-out',
                       isActive
                         ? 'bg-white font-medium text-black'
                         : 'text-gray-500 hover:bg-gray-100'
@@ -255,9 +270,22 @@ export default function AppSidebar() {
                         alt={item.title}
                         width={15}
                         height={15}
-                        className='text-current'
+                        className={cn(
+                          'transition-all duration-300 ease-in-out',
+                          isCollapsed ? 'mr-0 scale-100' : 'mr-3 scale-100'
+                        )}
                       />
-                      <span>{item.title}</span>
+
+                      <span
+                        className={cn(
+                          'transition-all duration-300 ease-in-out',
+                          isCollapsed
+                            ? 'w-0 -translate-x-8 opacity-0'
+                            : 'w-auto translate-x-0 opacity-100'
+                        )}
+                      >
+                        {item.title}
+                      </span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -267,48 +295,6 @@ export default function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      {/* <SidebarFooter className='mt-auto'>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              tooltip='Help'
-              className={cn(
-                'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
-                'text-gray-500 hover:bg-gray-100'
-              )}
-            >
-              <Link href='/help' className='flex items-center'>
-                <HelpCircle className='h-5 w-5' />
-                <span className='group-data-[state=collapsed]:hidden'>
-                  Help
-                </span>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              tooltip='Logout'
-              className={cn(
-                'gap-3 rounded-md px-3 py-5 text-[13px] transition-colors',
-                'text-gray-500 hover:bg-gray-100'
-              )}
-            >
-              <button
-                onClick={() => signOut()}
-                className='flex w-full items-center'
-              >
-                <LogOut className='h-5 w-5 text-destructive' />
-                <span className='text-destructive group-data-[state=collapsed]:hidden'>
-                  Logout
-                </span>
-              </button>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter> */}
       <SidebarRail />
     </Sidebar>
   );

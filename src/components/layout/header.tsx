@@ -23,13 +23,13 @@ export default function Header() {
 
       <Button
         variant='outline'
-        className='h-[37px] border-red-600 text-red-600 hover:bg-red-50 hover:text-red-600'
+        className='h-[37px] border-red-600 text-[13px] text-red-600 hover:bg-red-50 hover:text-red-600'
       >
         Get Specialist Help
       </Button>
 
       <Select defaultValue='us'>
-        <SelectTrigger className='w-[244px] border-none bg-secondary'>
+        <SelectTrigger className='w-[244px] border-none bg-secondary text-[13px] text-gray-600'>
           <div className='flex items-center gap-2'>
             <Image src='/us-flag.png' alt='f' width={24} height={24} />
             <SelectValue placeholder='Natural Things Main (US)' />

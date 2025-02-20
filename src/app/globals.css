@@ -84,6 +84,76 @@
   }
 }
 
+/* Add smooth transition utilities */
+.transition-sidebar {
+  transition-property: width, transform, opacity, margin, padding;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-sidebar-content {
+  transition-property: transform, opacity, width, margin;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-scale {
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-enter {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.scale-enter-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-exit-active {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+/* Collapsible animations */
+.collapsible-open {
+  animation: collapsible-down 0.2s ease-out;
+}
+
+.collapsible-closed {
+  animation: collapsible-up 0.2s ease-out;
+}
+
+@keyframes collapsible-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
 /* Refined shadow utilities for better layering */
 @layer utilities {
   .shadow-card-dark {
