@@ -2,7 +2,7 @@ import { Icons } from '@/components/icons';
 
 interface GraphCardData {
   title: string;
-  icon: keyof typeof Icons;
+  iconPath: string;
   color: string;
   amount: string;
   data: Array<{ date: string; value: number }>;
@@ -19,7 +19,7 @@ interface GraphCardData {
 export const graphCardsData: GraphCardData[] = [
   {
     title: 'SPEND',
-    icon: 'dollarSign',
+    iconPath: '/graph-icons/image copy 0.png',
     color: '#FFC246',
     amount: '$1,234.56',
     data: Array(20)
@@ -38,7 +38,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'AD SALES',
-    icon: 'store',
+    iconPath: '/graph-icons/image copy 1.png',
     color: '#4266E9',
     amount: '$1,087.54',
     data: Array(20)
@@ -58,7 +58,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'IMPRESSIONS',
-    icon: 'eye',
+    iconPath: '/graph-icons/image copy 2.png',
     color: '#07BEAA',
     amount: '234.5K',
     data: Array(20)
@@ -77,7 +77,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'CLICKS',
-    icon: 'mousePointer',
+    iconPath: '/graph-icons/image copy 3.png',
     color: '#58C4FF',
     amount: '12.3K',
     data: Array(20)
@@ -97,7 +97,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'CTR',
-    icon: 'percent',
+    iconPath: '/graph-icons/image copy 4.png',
     color: '#FFA14F',
     amount: '5.23%',
     data: Array(20)
@@ -116,7 +116,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'CVR',
-    icon: 'pieChart',
+    iconPath: '/graph-icons/image copy 5.png',
     color: '#9669BE',
     amount: '15.7%',
     data: Array(20)
@@ -135,7 +135,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'CPC',
-    icon: 'dollarSign',
+    iconPath: '/graph-icons/image copy 6.png',
     color: '#005AFF',
     amount: '$0.45',
     data: Array(20)
@@ -154,7 +154,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'ACos',
-    icon: 'barChart',
+    iconPath: '/graph-icons/image copy 7.png',
     color: '#8C564B',
     amount: '25.4%',
     data: Array(20)
@@ -173,7 +173,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'EPS',
-    icon: 'circleDollarSign',
+    iconPath: '/graph-icons/image copy 8.png',
     color: '#E377C2',
     amount: '$2.34',
     data: Array(20)
@@ -192,7 +192,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'ORGANIC SALES',
-    icon: 'boxIcon',
+    iconPath: '/graph-icons/image copy 9.png',
     color: '#7F7F7F',
     amount: '$3,456.78',
     data: Array(20)
@@ -211,7 +211,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'SESSIONS',
-    icon: 'activity',
+    iconPath: '/graph-icons/image copy 10.png',
     color: '#BCBD21',
     amount: '45.6K',
     data: Array(20)
@@ -230,7 +230,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'PAGE VIEWS',
-    icon: 'eye',
+    iconPath: '/graph-icons/image copy 11.png',
     color: '#17BECF',
     amount: '89.1K',
     data: Array(20)
@@ -249,7 +249,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'BUYBOX %',
-    icon: 'shoppingCart',
+    iconPath: '/graph-icons/image copy 12.png',
     color: '#558564',
     amount: '92.3%',
     data: Array(20)
@@ -268,7 +268,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'UNIT SESSION %',
-    icon: 'percent',
+    iconPath: '/graph-icons/image copy 13.png',
     color: '#FFB6C2',
     amount: '3.45%',
     data: Array(20)
@@ -287,7 +287,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'TOTAL SALES',
-    icon: 'circleDollarSign',
+    iconPath: '/graph-icons/image copy 14.png',
     color: '#FFD700',
     amount: '$12,345.67',
     data: Array(20)
@@ -306,7 +306,7 @@ export const graphCardsData: GraphCardData[] = [
   },
   {
     title: 'TOTAL ACos',
-    icon: 'trendingUp',
+    iconPath: '/graph-icons/image copy 15.png',
     color: '#D2691F',
     amount: '18.9%',
     data: Array(20)

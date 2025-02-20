@@ -2,14 +2,14 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartConfig } from '@/components/ui/chart';
-import { Icons } from '@/components/icons';
 import { MoveDown, MoveUp } from 'lucide-react';
 import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface BaseGraphProps {
   title: string;
-  icon: keyof typeof Icons;
+  iconPath: string;
   color: string;
   amount: string;
   data: Array<{ date: string; value: number }>;
@@ -24,7 +24,7 @@ interface BaseGraphProps {
 
 export function BaseGraph({
   title,
-  icon,
+  iconPath,
   color,
   amount,
   data,
@@ -33,7 +33,6 @@ export function BaseGraph({
   height = 60,
   isHighlighted = false
 }: BaseGraphProps) {
-  const Icon = Icons[icon];
   const gradientId = `gradient-${color.replace('#', '')}`;
 
   return (
@@ -49,16 +48,23 @@ export function BaseGraph({
       }
     >
       <CardHeader className='flex justify-between p-1 pb-2'>
-        <div className='flex items-start gap-2'>
+        <div className='flex items-start gap-1'>
           <div
-            className='m-1 rounded-full p-0.5'
-            style={{
-              backgroundColor: isHighlighted ? 'white' : color
-            }}
+            className='m-1'
+            // className='m-1 rounded-full p-0.5'
+            // style={{
+            //   backgroundColor: isHighlighted ? 'white' : color
+            // }}
           >
-            <Icon
-              className='size-[13px]'
-              style={{ color: isHighlighted ? color : 'white' }}
+            <Image
+              src={iconPath}
+              alt={title}
+              width={29}
+              height={29}
+              // className={cn(
+              //   'size-[13px]',
+              //   isHighlighted ? '[filter:invert(1)]' : ''
+              // )}
             />
           </div>
           <div className='w-full'>
