@@ -54,7 +54,7 @@ import { Separator } from '../ui/separator';
 const menuItems = [
   {
     title: 'Dashboard',
-    icon: '/menu-icons/Dashboard.svg',
+    icon: '/menu-icons/dashboard.svg',
     href: '/dashboard'
   },
   {
