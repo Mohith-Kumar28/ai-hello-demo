@@ -39,7 +39,7 @@ export function BaseGraph({
   return (
     <Card
       className={cn(
-        'relative h-[90px] overflow-hidden transition-colors',
+        'relative h-[100px] overflow-hidden transition-colors',
         isHighlighted && 'bg-[var(--card-color)]'
       )}
       style={

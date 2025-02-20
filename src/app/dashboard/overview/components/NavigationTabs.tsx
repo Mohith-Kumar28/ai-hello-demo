@@ -27,7 +27,7 @@ export function NavigationTabs({
           <TabsTrigger
             key={tab.value}
             value={tab.value}
-            className='relative h-auto rounded-none px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:text-primary data-[state=active]:shadow-none'
+            className='relative h-auto rounded-none px-4 py-2 font-bold data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:text-primary data-[state=active]:shadow-none'
           >
             <span className='flex items-center gap-2'>
               {tab.label}
